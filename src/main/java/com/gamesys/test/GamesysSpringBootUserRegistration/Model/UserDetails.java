@@ -3,6 +3,8 @@
  */
 package com.gamesys.test.GamesysSpringBootUserRegistration.Model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -16,10 +18,10 @@ public class UserDetails {
 	
 	private String userName;
 	private String passwords;
-	private String dateOfBirth;
+	private Date dateOfBirth;
 	private String ssn;
 	
-	public UserDetails(String userName,String passwords, String dateOfBirth, String ssn) {
+	public UserDetails(String userName,String passwords, Date dateOfBirth, String ssn) {
         super();
         this.userName = userName;
         this.passwords=passwords;
@@ -32,6 +34,13 @@ public class UserDetails {
 	 */
 	public String getUserName() {
 		return userName;
+	}
+
+	/**
+	 * @param dateOfBirth the dateOfBirth to set
+	 */
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 
 	/**
@@ -53,20 +62,6 @@ public class UserDetails {
 	 */
 	public void setPasswords(String passwords) {
 		this.passwords = passwords;
-	}
-
-	/**
-	 * @return the dateOfBirth
-	 */
-	public String getDateOfBirth() {
-		return dateOfBirth;
-	}
-
-	/**
-	 * @param dateOfBirth the dateOfBirth to set
-	 */
-	public void setDateOfBirth(String dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
 	}
 
 	/**

@@ -19,7 +19,7 @@ public class RegistrationUserServiceImpl implements RegistrationUserService{
 		users.setUserName(users.getUserName());
 		users.setPasswords(users.getPasswords());
 		users.setSsn(users.getSsn());
-		users.setDateOfBirth(users.getDateOfBirth());
+		//users.setDateOfBirth(users.getDateOfBirth());
         userRepository.save(users);
 	}
 	
