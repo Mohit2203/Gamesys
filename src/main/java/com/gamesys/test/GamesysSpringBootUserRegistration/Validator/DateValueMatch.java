@@ -10,5 +10,9 @@ import java.lang.annotation.Target;
 @Target({ ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 public @interface DateValueMatch {
+	
+	 String message() default "{com.gamesys.test.GamesysSpringBootUserRegistration.Validator.DateValueMatch.message}";
+	 
+	    Class<?>[] groups() default {};
 
 }
