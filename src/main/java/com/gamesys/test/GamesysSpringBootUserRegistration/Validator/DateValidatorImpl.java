@@ -10,7 +10,7 @@ import javax.validation.ConstraintValidatorContext;
  * @author Mohit
  *
  */
-public class DateValidator implements ConstraintValidator<DateValueMatch, String>{
+public class DateValidatorImpl implements ConstraintValidator<DateValueMatch, String>{
 
 	@Override
 	public boolean isValid(String value, ConstraintValidatorContext context) {
