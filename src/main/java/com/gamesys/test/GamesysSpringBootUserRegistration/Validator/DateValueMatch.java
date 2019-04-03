@@ -11,7 +11,7 @@ import javax.validation.Constraint;
 @Documented
 @Target({ ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = DateValidator.class)
+@Constraint(validatedBy = DateValidatorImpl.class)
 public @interface DateValueMatch {
 	
 	 String message() default "{com.gamesys.test.GamesysSpringBootUserRegistration.Validator.DateValueMatch.message}";
