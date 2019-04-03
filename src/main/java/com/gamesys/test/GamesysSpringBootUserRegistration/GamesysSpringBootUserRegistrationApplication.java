@@ -25,6 +25,7 @@ public class GamesysSpringBootUserRegistrationApplication {
 		return messageSource;
 	}
 
+	
 	@Bean
 	public LocalValidatorFactoryBean getValidator() {
 		LocalValidatorFactoryBean bean = new LocalValidatorFactoryBean();
