@@ -8,6 +8,8 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 /**
  * @author Mohit
  *
@@ -18,6 +20,7 @@ public class UserDetails {
 	
 	private String userName;
 	private String passwords;
+	@DateTimeFormat
 	private Date dateOfBirth;
 	private String ssn;
 	
