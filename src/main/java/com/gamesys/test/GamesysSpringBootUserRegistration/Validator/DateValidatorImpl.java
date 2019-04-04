@@ -4,7 +4,6 @@
 package com.gamesys.test.GamesysSpringBootUserRegistration.Validator;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

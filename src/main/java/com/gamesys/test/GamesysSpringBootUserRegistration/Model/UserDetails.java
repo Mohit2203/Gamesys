@@ -5,10 +5,10 @@ package com.gamesys.test.GamesysSpringBootUserRegistration.Model;
 
 import java.util.Date;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * @author Mohit
@@ -16,11 +16,11 @@ import org.springframework.format.annotation.DateTimeFormat;
  */
 @Entity
 @Table(name = "user")
+@Access(value=AccessType.FIELD)
 public class UserDetails {
 	
 	private String userName;
 	private String passwords;
-	@DateTimeFormat
 	private Date dateOfBirth;
 	private String ssn;
 	
