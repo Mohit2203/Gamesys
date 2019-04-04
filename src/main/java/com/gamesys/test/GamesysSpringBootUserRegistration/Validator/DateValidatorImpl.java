@@ -29,18 +29,17 @@ public class DateValidatorImpl implements ConstraintValidator<DateValueMatch, St
 		// TODO Auto-generated method stub
 		if (value == null)return false;
 		//Implement The Simple Date Format
-		if(!value.isEmpty()) {
+		isovalidDaysFormat=getISO8601StringForDate(value);
+		if(!value.isEmpty() && value.equalsIgnoreCase(isovalidDaysFormat)) {
+			return true;
 		}
 		
 		else{
-			try {
+		//Need to write the custom Exceptions
 				throw new Exception("Please enter the date in yyyy-MM-dd format");
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}	
+			
 		}
-			return true;
+			//return true;
 			
 		
 	}
