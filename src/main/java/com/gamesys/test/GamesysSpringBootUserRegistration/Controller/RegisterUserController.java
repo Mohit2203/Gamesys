@@ -15,8 +15,6 @@ import com.gamesys.test.GamesysSpringBootUserRegistration.Service.RegistrationUs
 import com.gamesys.test.GamesysSpringBootUserRegistration.model.UserDetails;
 
 import net.minidev.json.JSONObject;
- 
-
 
 /**
  * @author Mohit
@@ -25,16 +23,16 @@ import net.minidev.json.JSONObject;
 @RestController
 
 public class RegisterUserController {
-	
+
 	@Autowired
 	private RegistrationUserService registarService;
-	
+
 	@RequestMapping(path = "/register")
-	    public ResponseEntity<JSONObject> register(@Validated @RequestBody UserDetails users) {
+	public ResponseEntity<JSONObject> register(@Validated @RequestBody UserDetails users) {
 		registarService.register(users);
 		JSONObject resp = new JSONObject();
 		resp.put("status", "user Successfully registered");
 		return new ResponseEntity<JSONObject>(resp, HttpStatus.OK);
-	    }
+	}
 
 }

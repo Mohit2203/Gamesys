@@ -30,7 +30,7 @@ public class RegistrationUserServiceImpl implements RegistrationUserService{
 	
 	 @Override
 	    public UserDetails findByUsername(String userName) {
-	        return userRepository.findByUsername(userName);
+	        return userRepository.findByUserName(userName);
 	    }
 
 }
