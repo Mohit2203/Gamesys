@@ -3,8 +3,6 @@
  */
 package com.gamesys.test.GamesysSpringBootUserRegistration.model;
 
-import java.util.Date;
-
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
@@ -12,6 +10,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import com.gamesys.test.GamesysSpringBootUserRegistration.Validator.DateValueMatch;
 
 /**
  * @author Mohit
@@ -22,17 +24,26 @@ import javax.persistence.Table;
 @Access(value=AccessType.FIELD)
 public class UserDetails {
 	
-	private String userName;
-	private String passwords;
-	private Date dateOfBirth;
-	private String ssn;
 	
 	@Id
 	@Column(name = "id", unique = true, nullable = false)
 	@GeneratedValue(generator = "gen")
 	private long id;
 	
-	public UserDetails(String userName,String passwords, Date dateOfBirth, String ssn,long id) {
+	@NotNull(message ="Username cannot be empty")
+	@Size(min = 5, max = 10, message = "Username must have 5-10 characters")
+	private String userName;
+	@NotNull(message ="Password cannot be empty")
+	@Size(min = 5, max = 10, message = "Password must have 5-10 characters")
+	private String passwords;
+	@DateValueMatch
+	private String dateOfBirth;
+	@NotNull(message ="SSN cannot be empty")
+	@Size(min = 5, max = 10, message = "SSN must have 5-10 characters")
+	private String ssn;
+	
+	
+	public UserDetails(String userName,String passwords, String dateOfBirth, String ssn,long id) {
         super();
         this.userName = userName;
         this.passwords=passwords;
@@ -51,7 +62,7 @@ public class UserDetails {
 	/**
 	 * @param dateOfBirth the dateOfBirth to set
 	 */
-	public void setDateOfBirth(Date dateOfBirth) {
+	public void setDateOfBirth(String dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 

@@ -8,18 +8,15 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 @Documented
-@Target({ ElementType.TYPE })
+@Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = DateValidatorImpl.class)
 public @interface DateValueMatch {
-	
-	 String message() default "{com.gamesys.test.GamesysSpringBootUserRegistration.Validator.DateValueMatch.message}";
-	 
-	    Class<?>[] groups() default {};
-	    Class<? extends Payload>[] payload() default {};
-	    DateTimeFormat[] days();
 
+	String message() default "{com.gamesys.test.GamesysSpringBootUserRegistration.Validator.DateValueMatch.message}";
+
+	Class<?>[] groups() default {};
+
+	Class<? extends Payload>[] payload() default {};
 }
