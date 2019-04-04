@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.gamesys.test.GamesysSpringBootUserRegistration.model.UserDetails;
 
-public interface UserRepository extends JpaRepository<UserDetails, Long>{
+public interface UserRepository extends JpaRepository<UserDetails, String>{
 	
 	
 	UserDetails findByUsername(String userName);
