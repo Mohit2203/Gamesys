@@ -19,7 +19,7 @@ public class DateValidatorImpl implements ConstraintValidator<DateValueMatch, St
 
 	
 	
-	private static String getISO8601StringForDate(Date date) {
+	private static String getISO8601StringForDate(String date) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat(isovalidDaysFormat);
 		return dateFormat.format(date);
 }
