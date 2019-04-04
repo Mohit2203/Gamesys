@@ -5,4 +5,4 @@
  * @author Mohit
  *
  */
-package com.gamesys.test.GamesysSpringBootUserRegistration.Ecxeptions;
+package com.gamesys.test.GamesysSpringBootUserRegistration.Exceptions;
