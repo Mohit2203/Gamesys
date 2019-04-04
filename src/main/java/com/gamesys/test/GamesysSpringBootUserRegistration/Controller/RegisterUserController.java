@@ -26,8 +26,9 @@ public class RegisterUserController {
 	private RegistrationUserService registarService;
 	
 	@RequestMapping(path = "/register")
-	    public String register(@Validated@RequestBody UserDetails users) {
-		registarService.register();
+	    public String register(@Validated @RequestBody UserDetails users) {
+		registarService.register(users);
+		return null;
 	    }
 
 }
