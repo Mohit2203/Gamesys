@@ -7,7 +7,10 @@ import java.util.Date;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -24,12 +27,18 @@ public class UserDetails {
 	private Date dateOfBirth;
 	private String ssn;
 	
-	public UserDetails(String userName,String passwords, Date dateOfBirth, String ssn) {
+	@Id
+	@Column(name = "id", unique = true, nullable = false)
+	@GeneratedValue(generator = "gen")
+	private long id;
+	
+	public UserDetails(String userName,String passwords, Date dateOfBirth, String ssn,long id) {
         super();
         this.userName = userName;
         this.passwords=passwords;
         this.dateOfBirth = dateOfBirth;
         this.ssn = ssn;
+        this.id=id;
         }
 
 	/**
@@ -80,6 +89,19 @@ public class UserDetails {
 	public void setSsn(String ssn) {
 		this.ssn = ssn;
 	}
-	
+	/**
+	 * @return the id
+	 */
+	public long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(long id) {
+		this.id = id;
+	}
+
 
 }
