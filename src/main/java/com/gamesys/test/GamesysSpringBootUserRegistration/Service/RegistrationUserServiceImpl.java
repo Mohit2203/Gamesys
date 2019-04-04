@@ -3,8 +3,8 @@ package com.gamesys.test.GamesysSpringBootUserRegistration.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.gamesys.test.GamesysSpringBootUserRegistration.Model.UserDetails;
 import com.gamesys.test.GamesysSpringBootUserRegistration.Repository.UserRepository;
+import com.gamesys.test.GamesysSpringBootUserRegistration.model.UserDetails;
 
 @Service
 public class RegistrationUserServiceImpl implements RegistrationUserService{
@@ -29,8 +29,8 @@ public class RegistrationUserServiceImpl implements RegistrationUserService{
 	}
 	
 	 @Override
-	    public UserDetails findByUsername(String username) {
-	        return userRepository.findByUsername(username);
+	    public UserDetails findByUsername(String userName) {
+	        return userRepository.findByUsername(userName);
 	    }
 
 }

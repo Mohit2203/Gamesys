@@ -9,8 +9,8 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import com.gamesys.test.GamesysSpringBootUserRegistration.Model.UserDetails;
 import com.gamesys.test.GamesysSpringBootUserRegistration.Service.RegistrationUserService;
+import com.gamesys.test.GamesysSpringBootUserRegistration.model.UserDetails;
 
 /**
  * @author Mohit

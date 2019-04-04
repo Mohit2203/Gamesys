@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.gamesys.test.GamesysSpringBootUserRegistration.Model;
+package com.gamesys.test.GamesysSpringBootUserRegistration.model;
 
 import java.util.Date;
 

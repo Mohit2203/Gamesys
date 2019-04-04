@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gamesys.test.GamesysSpringBootUserRegistration.Model.UserDetails;
 import com.gamesys.test.GamesysSpringBootUserRegistration.Service.RegistrationUserService;
+import com.gamesys.test.GamesysSpringBootUserRegistration.model.UserDetails;
 
 import net.minidev.json.JSONObject;
  
