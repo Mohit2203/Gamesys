@@ -27,7 +27,9 @@ public class DateValidatorImpl implements ConstraintValidator<DateValueMatch, St
 	@Override
 	public boolean isValid(String value, ConstraintValidatorContext context) {
 		// TODO Auto-generated method stub
-		if (value == null)return false;
+		try {
+		if (value == null)
+			throw new DateFormatNotValidException("Please enter the date in yyyy-MM-dd format");
 		//Implement The Simple Date Format
 		isovalidDaysFormat=getISO8601StringForDate(value);
 		if(!value.isEmpty() && value.equalsIgnoreCase(isovalidDaysFormat)) {
@@ -36,10 +38,13 @@ public class DateValidatorImpl implements ConstraintValidator<DateValueMatch, St
 		
 		else{
 		//Need to write the custom Exceptions
-				throw new Exception("Please enter the date in yyyy-MM-dd format");
 			
 		}
-			//return true;
+		}
+		catch(Exception ex) {
+			throw new DateFormatNotValidException("Please enter the date in yyyy-MM-dd format");
+		}
+			return true;
 			
 		
 	}
