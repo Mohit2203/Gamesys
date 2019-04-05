@@ -18,7 +18,7 @@ import com.gamesys.test.GamesysSpringBootUserRegistration.Service.Message;
 public class ControllerExceptionHandler {
 
 	@ExceptionHandler(UserIsBlacklistedException.class)
-	@ResponseStatus(HttpStatus.NOT_ACCEPTABLE)
+	@ResponseStatus(HttpStatus.PRECONDITION_FAILED)
 	@ResponseBody
 	public Message UserIsBlacklistedException(UserIsBlacklistedException ex) {
 
@@ -27,7 +27,7 @@ public class ControllerExceptionHandler {
 	}
 
 	@ExceptionHandler(UserAlreadyExistException.class)
-	@ResponseStatus(HttpStatus.NOT_ACCEPTABLE)
+	@ResponseStatus(HttpStatus.PRECONDITION_FAILED)
 	@ResponseBody
 	public Message UserAlreadyExistExceptionException(UserIsBlacklistedException ex) {
 
