@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.gamesys.test.GamesysSpringBootUserRegistration.Exceptions.UserAlreadyExistException;
 import com.gamesys.test.GamesysSpringBootUserRegistration.Exceptions.UserIsBlacklistedException;
 import com.gamesys.test.GamesysSpringBootUserRegistration.Repository.UserRepository;
 import com.gamesys.test.GamesysSpringBootUserRegistration.model.UserDetails;
@@ -24,6 +25,8 @@ public class RegistrationUserServiceImpl implements RegistrationUserService {
 		List<String> blacklisted = usersBlackList.blackListusers();
 		if (blacklisted.contains(users.getSsn())) {
 			throw new UserIsBlacklistedException("Cannot resgitered a BlackList Users");
+		} else if (findByUsername(users.getUserName()) != null) {
+			throw new UserAlreadyExistException("User already Exist");
 		} else {
 			userRepository.save(users);
 		}

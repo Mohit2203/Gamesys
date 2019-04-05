@@ -3,6 +3,8 @@
  */
 package com.gamesys.test.GamesysSpringBootUserRegistration.model;
 
+import java.util.Date;
+
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
@@ -13,6 +15,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 //import com.gamesys.test.GamesysSpringBootUserRegistration.Validator.DateValueMatch;
 
 /**
@@ -21,37 +25,35 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name = "user")
-@Access(value=AccessType.FIELD)
+@Access(value = AccessType.FIELD)
 public class UserDetails {
-	
-	
+
 	@Id
 	@Column(name = "id", unique = true, nullable = false)
 	@GeneratedValue(generator = "gen")
 	private long id;
-	
-	@NotNull(message ="Username cannot be empty")
+
+	@NotNull(message = "Username cannot be empty")
 	@Size(min = 5, max = 10, message = "Username must have 5-10 characters")
 	private String userName;
-	@NotNull(message ="Password cannot be empty")
+	@NotNull(message = "Password cannot be empty")
 	@Size(min = 5, max = 10, message = "Password must have 5-10 characters")
 	private String passwords;
-	//@DateValueMatch
-	@NotNull(message ="Please enter the date in yyyy-MM-dd format")
-	private String dateOfBirth;
-	@NotNull(message ="SSN cannot be empty")
+	@NotNull(message = "Please enter the date in yyyy-MM-dd format")
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private Date dateOfBirth;
+	@NotNull(message = "SSN cannot be empty")
 	@Size(min = 5, max = 10, message = "SSN must have 5-10 characters")
 	private String ssn;
-	
-	
-	public UserDetails(String userName,String passwords, String dateOfBirth, String ssn,long id) {
-        super();
-        this.userName = userName;
-        this.passwords=passwords;
-        this.dateOfBirth = dateOfBirth;
-        this.ssn = ssn;
-        this.id=id;
-        }
+
+	public UserDetails(String userName, String passwords, Date dateOfBirth, String ssn, long id) {
+		super();
+		this.userName = userName;
+		this.passwords = passwords;
+		this.dateOfBirth = dateOfBirth;
+		this.ssn = ssn;
+		this.id = id;
+	}
 
 	/**
 	 * @return the userName
@@ -63,7 +65,7 @@ public class UserDetails {
 	/**
 	 * @param dateOfBirth the dateOfBirth to set
 	 */
-	public void setDateOfBirth(String dateOfBirth) {
+	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 
@@ -101,6 +103,7 @@ public class UserDetails {
 	public void setSsn(String ssn) {
 		this.ssn = ssn;
 	}
+
 	/**
 	 * @return the id
 	 */
@@ -114,6 +117,5 @@ public class UserDetails {
 	public void setId(long id) {
 		this.id = id;
 	}
-
 
 }
