@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.gamesys.test.GamesysSpringBootUserRegistration.Validator.DateValueMatch;
+//import com.gamesys.test.GamesysSpringBootUserRegistration.Validator.DateValueMatch;
 
 /**
  * @author Mohit
@@ -36,7 +36,8 @@ public class UserDetails {
 	@NotNull(message ="Password cannot be empty")
 	@Size(min = 5, max = 10, message = "Password must have 5-10 characters")
 	private String passwords;
-	@DateValueMatch
+	//@DateValueMatch
+	@NotNull(message ="Please enter the date in yyyy-MM-dd format")
 	private String dateOfBirth;
 	@NotNull(message ="SSN cannot be empty")
 	@Size(min = 5, max = 10, message = "SSN must have 5-10 characters")
