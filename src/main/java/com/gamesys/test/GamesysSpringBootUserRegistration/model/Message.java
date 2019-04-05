@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.gamesys.test.GamesysSpringBootUserRegistration.Service;
+package com.gamesys.test.GamesysSpringBootUserRegistration.model;
 
 /**
  * @author Mohit

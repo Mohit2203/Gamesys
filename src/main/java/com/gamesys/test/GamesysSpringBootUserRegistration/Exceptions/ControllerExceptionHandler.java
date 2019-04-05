@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import com.gamesys.test.GamesysSpringBootUserRegistration.Service.Message;
+
+import com.gamesys.test.GamesysSpringBootUserRegistration.model.Message;
 
 /**
  * @author Mohit

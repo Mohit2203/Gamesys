@@ -10,11 +10,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.gamesys.test.GamesysSpringBootUserRegistration.Service.RegistrationUserService;
 import com.gamesys.test.GamesysSpringBootUserRegistration.model.UserDetails;
-
-//import net.minidev.json.JSONObject;
 
 /**
  * @author Mohit
@@ -30,8 +27,7 @@ public class RegisterUserController {
 	public ResponseEntity<String> register(@Validated @RequestBody UserDetails users) {
 		registarService.register(users);
 		String resp = new String("\"user Successfully registered\"");
-		//resp.put("status", "user Successfully registered");
-		return new ResponseEntity<String>(resp, HttpStatus.OK);
+		return new ResponseEntity<String>(resp, HttpStatus.CREATED);
 	}
 
 }
