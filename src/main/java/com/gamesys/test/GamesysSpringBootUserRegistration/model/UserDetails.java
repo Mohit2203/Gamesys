@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -34,10 +35,12 @@ public class UserDetails {
 	private long id;
 
 	@NotNull(message = "Username cannot be empty")
-	@Size(min = 5, max = 10, message = "Username must have 5-10 characters")
+	@Size(min = 5, max = 10, message = "Username must have 5-10 characters and only alphanumerical characters are allowed")
+	@Pattern(regexp = "^[a-zA-Z0-9]{1,32}$")
 	private String userName;
-	@NotNull(message = "Password cannot be empty")
-	@Size(min = 5, max = 10, message = "Password must have 5-10 characters")
+	@NotNull(message = "Password cannot be empty and Password must have 4-10 characters and at least four characters, at least one upper case character, at least one number")
+	@Size(min = 4, max = 16, message = "Password must have 4-10 characters and at least four characters, at least one upper case character, at least one number")
+	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{4,}$")
 	private String passwords;
 	@NotNull(message = "Please enter the date in yyyy-MM-dd format")
 	@JsonFormat(pattern = "yyyy-MM-dd")
@@ -46,6 +49,9 @@ public class UserDetails {
 	@Size(min = 5, max = 10, message = "SSN must have 5-10 characters")
 	private String ssn;
 
+	public UserDetails() {
+		
+	}
 	public UserDetails(String userName, String passwords, Date dateOfBirth, String ssn, long id) {
 		super();
 		this.userName = userName;
