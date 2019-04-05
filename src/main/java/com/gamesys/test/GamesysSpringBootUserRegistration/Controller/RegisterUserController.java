@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gamesys.test.GamesysSpringBootUserRegistration.Service.RegistrationUserService;
 import com.gamesys.test.GamesysSpringBootUserRegistration.model.UserDetails;
 
-import net.minidev.json.JSONObject;
+//import net.minidev.json.JSONObject;
 
 /**
  * @author Mohit
@@ -27,11 +27,11 @@ public class RegisterUserController {
 	private RegistrationUserService registarService;
 
 	@PostMapping("/employees")
-	public ResponseEntity<JSONObject> register(@Validated @RequestBody UserDetails users) {
+	public ResponseEntity<String> register(@Validated @RequestBody UserDetails users) {
 		registarService.register(users);
-		JSONObject resp = new JSONObject();
-		resp.put("status", "user Successfully registered");
-		return new ResponseEntity<JSONObject>(resp, HttpStatus.OK);
+		String resp = new String("\"user Successfully registered\"");
+		//resp.put("status", "user Successfully registered");
+		return new ResponseEntity<String>(resp, HttpStatus.OK);
 	}
 
 }
