@@ -3,7 +3,6 @@
  */
 package com.gamesys.test.GamesysSpringBootUserRegistration.Exceptions;
 
-
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -17,14 +16,22 @@ import com.gamesys.test.GamesysSpringBootUserRegistration.Service.Message;
  */
 @ControllerAdvice
 public class ControllerExceptionHandler {
-	
+
 	@ExceptionHandler(UserIsBlacklistedException.class)
-	@ResponseStatus(HttpStatus.OK)
+	@ResponseStatus(HttpStatus.NOT_ACCEPTABLE)
 	@ResponseBody
 	public Message UserIsBlacklistedException(UserIsBlacklistedException ex) {
-	
-		return new Message("User is Blacklisted","User Is Blacklisted");
-		
+
+		return new Message("User is Blacklisted", "ERR001");
+
 	}
 
+	@ExceptionHandler(UserAlreadyExistException.class)
+	@ResponseStatus(HttpStatus.NOT_ACCEPTABLE)
+	@ResponseBody
+	public Message UserAlreadyExistExceptionException(UserIsBlacklistedException ex) {
+
+		return new Message("User already exist", "ERR002");
+
+	}
 }
