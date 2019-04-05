@@ -2,7 +2,6 @@
  * 
  */
 package com.gamesys.test.GamesysSpringBootUserRegistration.model;
-
 /**
  * @author Mohit
  *
