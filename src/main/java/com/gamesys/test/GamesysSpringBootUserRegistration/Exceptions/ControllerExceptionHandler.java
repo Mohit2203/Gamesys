@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.gamesys.test.GamesysSpringBootUserRegistration.Controller;
+package com.gamesys.test.GamesysSpringBootUserRegistration.Exceptions;
 
 
 import org.springframework.http.HttpStatus;
@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import com.gamesys.test.GamesysSpringBootUserRegistration.Service.Message;
-import com.gamesys.test.GamesysSpringBootUserRegistration.Exceptions.UserIsBlacklistedException;
 
 /**
  * @author Mohit
