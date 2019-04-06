@@ -22,7 +22,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 /**
  * @author Mohit
- *
+ *UserDetails class represents for a record of user table.
+ *It is an user  registered successfully into system.
  */
 @Entity
 @Table(name = "user")
