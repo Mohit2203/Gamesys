@@ -1,5 +1,12 @@
 package com.gamesys.test.GamesysSpringBootUserRegistration.Service;
 
+/**
+ * This Class will implement the RegistrationUserService interface and return the new instance of
+ * the user who trying to register itself first time.
+ * Also it will return an exception if the user already exists or a part of the
+ * blacklist 
+ * 
+ */
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
