@@ -27,10 +27,10 @@ public class RegisterUserController {
 	public ResponseEntity<String> register(@Validated @RequestBody UserDetails users) {
 		UserDetails endUser = registarService.register(users);
 		if (endUser != null) {
-			String resp = new String("\"user Successfully registered\"");
+			String resp = new String("user Successfully registered");
 			return new ResponseEntity<String>(resp, HttpStatus.CREATED);
 		} else {
-			String error = new String("\"error registering user\"");
+			String error = new String("error registering user");
 			return new ResponseEntity<String>(error, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
