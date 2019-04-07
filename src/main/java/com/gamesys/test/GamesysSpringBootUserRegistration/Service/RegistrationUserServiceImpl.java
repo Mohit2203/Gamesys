@@ -27,16 +27,17 @@ public class RegistrationUserServiceImpl implements RegistrationUserService {
 	private UserBlackListed usersBlackList;
 
 	@Override
-	public void register(UserDetails users) {
-
+	public UserDetails register(UserDetails users) {
+		UserDetails endUser = null;
 		List<String> blacklisted = usersBlackList.blackListusers();
 		if (blacklisted.contains(users.getSsn())) {
 			throw new UserIsBlacklistedException("Cannot resgitered a BlackList Users");
 		} else if (findByUsername(users.getUserName()) != null) {
 			throw new UserAlreadyExistException("User already Exist");
 		} else {
-			userRepository.save(users);
+			endUser = userRepository.save(users);
 		}
+		return endUser;
 	}
 
 	@Override

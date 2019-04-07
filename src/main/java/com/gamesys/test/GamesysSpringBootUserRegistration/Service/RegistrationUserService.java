@@ -11,7 +11,7 @@ import com.gamesys.test.GamesysSpringBootUserRegistration.model.UserDetails;
  */
 public interface RegistrationUserService {
 
-	void register(UserDetails users);
+	UserDetails register(UserDetails users);
 	
 	UserDetails findByUsername(String userName);
 }

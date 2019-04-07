@@ -9,6 +9,10 @@ import java.util.Date;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
@@ -21,13 +25,16 @@ import com.gamesys.test.GamesysSpringBootUserRegistration.Service.RegistrationUs
 import com.gamesys.test.GamesysSpringBootUserRegistration.model.UserDetails;
 
 @WebMvcTest(value = RegisterUserController.class)
-public class RegistrationIntegrationTest extends AbstractTestClass {
+public class RegistrationControllerTest extends AbstractTestClass {
 
 	private UserDetails userDetails;
+
+	@InjectMocks
+	private RegisterUserController controller;
 	
-	@MockBean	
-	private  RegistrationUserService service ;
-	
+	@Mock
+	private RegistrationUserService service;
+
 	@Before
 	public void setUp() {
 		String pattern = "yyyy-MM-dd";
@@ -43,11 +50,13 @@ public class RegistrationIntegrationTest extends AbstractTestClass {
 
 	@Test
 	public void registerUserTest() throws Exception {
-		String uri = "/register";		
-		String inputJson = super.maptoJson(userDetails); 
+		String uri = "/register";
+		String inputJson = super.maptoJson(userDetails);
 		mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-		MvcResult mvcResult = super.mvc.perform(MockMvcRequestBuilders.post(uri)
-			      .contentType(MediaType.APPLICATION_JSON_VALUE).content(inputJson)).andReturn();
+		Mockito.when(service.register(userDetails)).thenReturn(userDetails);
+		MvcResult mvcResult = super.mvc.perform(
+				MockMvcRequestBuilders.post(uri).contentType(MediaType.APPLICATION_JSON_VALUE).content(inputJson))
+				.andReturn();
 		int status = mvcResult.getResponse().getStatus();
 		assertEquals(201, status);
 	}

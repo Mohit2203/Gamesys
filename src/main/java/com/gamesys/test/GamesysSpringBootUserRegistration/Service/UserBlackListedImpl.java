@@ -8,8 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserBlackListedImpl implements UserBlackListed {
 
-	public List<String> blackListusers() {
-		// TODO Auto-generated method stub
+	public List<String> blackListusers() {		
 		return new ArrayList<String>();
 	}
 
