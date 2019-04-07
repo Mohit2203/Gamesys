@@ -53,13 +53,12 @@ public class UserDetails {
 	public UserDetails() {
 		
 	}
-	public UserDetails(String userName, String passwords, Date dateOfBirth, String ssn, long id) {
+	public UserDetails(String userName, String passwords, Date dateOfBirth, String ssn) {
 		super();
 		this.userName = userName;
 		this.passwords = passwords;
 		this.dateOfBirth = dateOfBirth;
-		this.ssn = ssn;
-		this.id = id;
+		this.ssn = ssn;		
 	}
 
 	/**

@@ -23,7 +23,7 @@ public class RegisterUserController {
 	@Autowired
 	private RegistrationUserService registarService;
 
-	@PostMapping("/employees")
+	@PostMapping("/register")
 	public ResponseEntity<String> register(@Validated @RequestBody UserDetails users) {
 		registarService.register(users);
 		String resp = new String("\"user Successfully registered\"");
