@@ -34,11 +34,11 @@ public class RegistrationIntegrationTest extends AbstractTestClass {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 		Date date = null;
 		try {
-			date = simpleDateFormat.parse("2018-09-09");
+			date = simpleDateFormat.parse("2018-03-22");
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		userDetails = new UserDetails("TestUser", "TestPass", date, "ssnTest");
+		userDetails = new UserDetails("Mohit", "MohitM13", date, "12345");
 	}
 
 	@Test
