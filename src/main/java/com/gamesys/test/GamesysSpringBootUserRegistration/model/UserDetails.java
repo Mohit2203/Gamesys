@@ -47,7 +47,7 @@ public class UserDetails {
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date dateOfBirth;
 	@NotNull(message = "SSN cannot be empty")
-	@Size(min = 5, max = 10, message = "SSN must have 5-10 characters")
+	//@Size(min = 5, max = 10, message = "SSN must have 5-10 characters")
 	private String ssn;
 
 	public UserDetails() {
