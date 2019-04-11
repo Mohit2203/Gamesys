@@ -15,6 +15,8 @@ import com.gamesys.test.GamesysSpringBootUserRegistration.model.UserDetails;
 
 /**
  * @author Mohit
+ * RESTful applications generate HTTP requests performing
+ * Save operations on resources
  *
  */
 @RestController
